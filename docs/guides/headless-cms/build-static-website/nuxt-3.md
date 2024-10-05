@@ -230,7 +230,7 @@ Each blog post links to a page that does not yet exist. In the `pages/blog` dire
 const { $directus, $readItem } = useNuxtApp()
 const route = useRoute()
 
-const { data: post } = await useAsyncData('post', () => {
+const { data: post } = await useAsyncData('posts', () => {
   return $directus.request(
     $readItem('posts', route.params.slug, {
       fields: ['*', { '*': ['*'] }]
